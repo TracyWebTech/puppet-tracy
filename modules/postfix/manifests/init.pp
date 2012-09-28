@@ -1,7 +1,12 @@
 
 class postfix {
-  package { 'postfix': }
-  package { 'mailutils': }
+  package { 'postfix':
+    ensure => installed,
+  }
+  
+  package { 'mailutils':
+    ensure => installed,
+  }
 
   service { 'postfix':
     ensure => running,
