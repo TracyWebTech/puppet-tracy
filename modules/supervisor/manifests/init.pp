@@ -11,4 +11,11 @@ class supervisor {
     start => '/etc/init.d/supervisord start',
     restart => 'supervisorctl update',
   }
+
+  file { '/etc/supervisor/conf.d/':
+    ensure => directory,
+    recurse => true,
+    purge => true,
+    notify => Service['supervisor'],
+  }
 }
