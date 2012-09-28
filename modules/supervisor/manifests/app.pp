@@ -21,6 +21,7 @@ define supervisor::app (
     start => "/usr/bin/supervisorctl start $app_name",
     restart => "/usr/bin/supervisorctl restart $app_name",
     stop => "/usr/bin/supervisorctl stop $app_name",
+    status => "/usr/bin/supervisorctl status | awk '/^${name}[: ]/{print \$2}' | grep '^RUNNING$'",
     subscribe => File[$conf_file], 
     hasrestart => false, 
     hasstatus => false,
