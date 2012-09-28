@@ -1,7 +1,9 @@
 
-class base::nginx {
+class nginx {
   
-  package { 'nginx': }
+  package { 'nginx': 
+    ensure => present,
+  }
   
   service { 'nginx': 
     ensure => running,

@@ -1,6 +1,5 @@
 
-class base::postfix {
-
+class postfix {
   package { 'postfix': }
   package { 'mailutils': }
 
