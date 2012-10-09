@@ -1,0 +1,16 @@
+node default
+    #USERS
+    #POSTFIX
+    #SSH
+    #SERVER-DENSITY
+
+node webserver
+    #NGINX
+    #VIRTUALENV
+    #SUPERVISOR
+    #SOLR
+    #CRONJOBS
+
+node dbserver
+    #MYSQL
+    #CRONJOBS
