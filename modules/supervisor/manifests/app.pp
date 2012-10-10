@@ -18,10 +18,11 @@ define supervisor::app (
 
   service { $service_name:
     ensure => running,
-    start => "/usr/bin/supervisorctl start $app_name",
-    restart => "/usr/bin/supervisorctl restart $app_name",
-    stop => "/usr/bin/supervisorctl stop $app_name",
-    status => "/usr/bin/supervisorctl status | awk '/^${name}[: ]/{print \$2}' | grep '^RUNNING$'",
+    path =>  ['/usr/bin'],
+    start => "supervisorctl start $app_name",
+    restart => "supervisorctl restart $app_name",
+    stop => "supervisorctl stop $app_name",
+    status => "supervisorctl status | awk '/^${name}[: ]/{print \$2}' | grep '^RUNNING$'",
     subscribe => File[$conf_file], 
     hasrestart => false, 
     hasstatus => false,
