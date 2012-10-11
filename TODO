@@ -7,7 +7,7 @@ node default
 node webserver
     #NGINX
     #VIRTUALENV
-    #SUPERVISOR
+*   #SUPERVISOR
     #SOLR
     #CRONJOBS
 
