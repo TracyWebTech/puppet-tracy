@@ -1,5 +1,5 @@
 node default
-    #USERS
+*   #USERS
 *   #POSTFIX 
 *   #SSH
 *   #SERVER-DENSITY
