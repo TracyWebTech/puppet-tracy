@@ -14,14 +14,14 @@ define virtualenv::install_requirements(
   }
 
   exec { "update ${name} requirements":
-    command => "pip install --environment=$virtualenv -Ur ${name}",
+    command => "pip install --environment=${virtualenv} -Ur ${name}",
     subscribe => Exec["checksum_${name}"],
     refreshonly => true,
     timeout => 1800,
   }
 
   exec { "pip_requirements ${virtualenv_path} ${name}":
-    command => "pip install --environment=${virtualenv_path} -r ${name}",
+    command => "pip install --environment=${virtualenv} -r ${name}",
     require => Exec["checksum_${name}"]
     
   }
