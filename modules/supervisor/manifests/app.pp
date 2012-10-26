@@ -26,5 +26,6 @@ define supervisor::app (
     subscribe => File[$conf_file], 
     hasrestart => false, 
     hasstatus => false,
+    provider => base
   }
 }

@@ -17,5 +17,6 @@ class supervisor {
     recurse => true,
     purge => true,
     notify => Service['supervisor'],
+    require => Package['supervisor']
   }
 }
