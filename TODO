@@ -5,12 +5,12 @@ node default
 *   #SERVER-DENSITY
 
 node webserver
-    #NGINX
+*   #NGINX
 *   #VIRTUALENV
 *   #SUPERVISOR
     #SOLR
     #CRONJOBS
 
 node dbserver
-    #MYSQL
+*   #MYSQL
     #CRONJOBS
